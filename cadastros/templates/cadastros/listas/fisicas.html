@@ -1,0 +1,29 @@
+{% extends 'paginas/admin.html' %} {% load static %} {% block conteudo %}
+
+{% load static %}
+
+
+<h3 class="title">Lista De Pessoas Fisicas</h3>
+
+<div class="table-responsive">
+  {% for fisicas in object_list %}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">NOME</th>
+        <th scope="col">CNPJ</th>
+        <th scope="col">CPF</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>{{fisicas.nome}}</td>
+      <td>{{fisicas.cpf}}</td>
+      <td>{{fisicas.rg}}</td>
+    </tbody>
+  </table>
+    <a href="{% url 'excluir-pessoa-fisica' fisicas.pk  %}" class="btn btn-danger btn-sm">Excluir</a>
+    <a href="{% url 'atualizar-pessoa-fisica' fisicas.pk %}" class="btn btn-warning btn-sm">Alterar</a>
+    <a href="{% url 'atualizar-pessoa-fisica' fisicas.pk %}" class="btn btn-primary btn-sm">Abrir</a>
+  {%endfor%} 
+</div>
+{% endblock %}

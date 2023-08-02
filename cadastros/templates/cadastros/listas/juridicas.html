@@ -1,0 +1,29 @@
+{% extends 'paginas/admin.html' %} {% load static %} {% block conteudo %}
+
+{% load static %}
+
+
+<h3 class="title">Pessoas Juridicas</h3>
+
+<div class="table-responsive">
+  {% for juridicas in object_list %}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">NOME</th>
+        <th scope="col">CNPJ</th>
+        <th scope="col">CPF</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>{{juridicas.nome}}</td>
+      <td>{{juridicas.cnpj}}</td>
+      <td>{{juridicas.cpf}}</td>
+    </tbody>
+  </table>
+  <a href="{% url 'excluir-pessoa-juridica' juridicas.pk  %}" class="btn btn-danger btn-sm">Excluir</a>
+  <a href="{% url 'atualizar-pessoa-juridica' juridicas.pk %}" class="btn btn-warning btn-sm">Alterar</a>
+  <a href="{% url 'atualizar-pessoa-juridica' juridicas.pk %}" class="btn btn-primary btn-sm">Abrir</a>
+  {%endfor%} 
+</div>
+{% endblock %}

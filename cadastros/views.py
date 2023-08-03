@@ -9,7 +9,7 @@ from django.urls import reverse_lazy
 
 class FisicasCreate(CreateView):
     model = Fisicas
-    fields = ['nome','cpf', 'rg',  'nomepai', 'nomemae','nascimento', 'cidade_nascimento', 'estado_civil', 'cep', 'cidade', 'bairro', 'rua', 'numeracao', 'fone', 'tpr', 'imovel_proprio', 'valor_imovel', 'local_trabalho', 'nome_empresa', 'cep_empresa', 'cidade_empresa', 'bairro_empresa', 'rua_empresa', 'numeracao_empresa', 'tempo_servico', 'registrado', 'funcao', 'salario', 'futura_empresa', 'cep_futura_empresa', 'cidade_futura_empresa', 'bairro_futura_empresa', 'rua_futura_empresa', 'numeracao_futura_empresa', 'faturamento', 'fone_futura_empresa']
+    fields = ['nome_fisica','cpf_fisica', 'rg_fisica',  'nomepai', 'nomemae','nascimento', 'cidade_nascimento', 'estado_civil', 'cep', 'cidade', 'bairro', 'rua', 'numeracao', 'fone', 'tpr', 'imovel_proprio', 'valor_imovel', 'local_trabalho', 'nome_empresa', 'cep_empresa', 'cidade_empresa', 'bairro_empresa', 'rua_empresa', 'numeracao_empresa', 'tempo_servico', 'registrado', 'funcao', 'salario', 'futura_empresa', 'cep_futura_empresa', 'cidade_futura_empresa', 'bairro_futura_empresa', 'rua_futura_empresa', 'numeracao_futura_empresa', 'faturamento', 'fone_futura_empresa']
     template_name = 'cadastros/form-fisica.html'
     success_url = reverse_lazy('listas-pessoas-fisicas')
 
@@ -25,7 +25,7 @@ class JuridicasCreate(CreateView):
 
 class FisicasUpdate(UpdateView):
     model = Fisicas
-    fields = ['nome','cpf', 'rg',  'nomepai', 'nomemae','nascimento', 'cidade_nascimento', 'estado_civil', 'cep', 'cidade', 'bairro', 'rua', 'numeracao', 'fone', 'tpr', 'imovel_proprio', 'valor_imovel', 'local_trabalho', 'nome_empresa', 'cep_empresa', 'cidade_empresa', 'bairro_empresa', 'rua_empresa', 'numeracao_empresa', 'tempo_servico', 'registrado', 'funcao', 'salario', 'futura_empresa', 'cep_futura_empresa', 'cidade_futura_empresa', 'bairro_futura_empresa', 'rua_futura_empresa', 'numeracao_futura_empresa', 'faturamento', 'fone_futura_empresa']
+    fields = ['nome_fisica','cpf_fisica', 'rg_fisica',  'nomepai', 'nomemae','nascimento', 'cidade_nascimento', 'estado_civil', 'cep', 'cidade', 'bairro', 'rua', 'numeracao', 'fone', 'tpr', 'imovel_proprio', 'valor_imovel', 'local_trabalho', 'nome_empresa', 'cep_empresa', 'cidade_empresa', 'bairro_empresa', 'rua_empresa', 'numeracao_empresa', 'tempo_servico', 'registrado', 'funcao', 'salario', 'futura_empresa', 'cep_futura_empresa', 'cidade_futura_empresa', 'bairro_futura_empresa', 'rua_futura_empresa', 'numeracao_futura_empresa', 'faturamento', 'fone_futura_empresa']
     template_name = 'cadastros/form-fisica.html'
     success_url = reverse_lazy('listas-pessoas-fisicas')
 

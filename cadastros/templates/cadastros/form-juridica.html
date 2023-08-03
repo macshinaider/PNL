@@ -4,7 +4,7 @@
     <a href="{% url 'cadastrar-pessoas-fisicas' %}" class="btn-left">Fisicas</a>
     <a href="{% url 'cadastrar-pessoas-juridicas' %}" class="btn-right">Juridicas</a>
   </nav>
-  <a href="{% url 'listas-pessoas-fisicas'%}" class="btn btn-primary">Retornar</a>
+  <a href="{% url 'listas-pessoas-fisicas'%}" class="btn btn-primary btn-sm">Retornar</a>
 </header>
 {% endblock %} 
   {%block title%}
@@ -17,18 +17,9 @@
     
     {% csrf_token %}
    
-      <div class="d-flex align-items-center">
-        <label for="exampleInputEmail1" class="form-label">Nome</label>
-        <input type="text" class="form-control" name="nome" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">CPJ</label>
-        <input type="number" class="form-control" name="cnpj" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">CPF</label>
-        <input type="text" class="form-control" name="cpf" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
+      <input type="text" name="nome" id="">
+      <input type="number" name="cnpj" id="">
+      <input type="number" name="cpf" id="">
 
   <button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
 </form>

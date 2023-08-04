@@ -1,4 +1,4 @@
-{%extends 'paginas/admin.html'%} {% load static %}   {% block header %}
+{%extends 'paginas/admin.html'%} {% load static %} {% load crispy_forms_tags %} {% block header %} 
 <header class="header-container">
   <nav class="nav-container">
     <a href="{% url 'cadastrar-pessoas-fisicas' %}" class="btn-left">Fisicas</a>
@@ -18,81 +18,7 @@
 {% block conteudo %}
 <form action="" method="POST">
     
-  {% csrf_token %} <div class="form">{{form}}</div>
-  <!-- <div class="d-flex flex-column w-100 gap-5">
-    <div class="d-flex flex-column mb-2">
-      <p class="text-secondary fs-4">DADOS PESSOAS 1</p>
-      <div class="d-flex gap-1 responsive">
-        <input type="text" name="nome_fisica" id="" placeholder="Nome Completo">
-        <input type="number" name="cpf_fisica" id="" placeholder="Número do CPF">
-        <input type="number" name="rg_fisica" id="" placeholder="Número do RG">
-        <input type="date" name="nascimento" id="nascimento">
-      </div>
-      <hr>
-      <div class="d-flex gap-1 responsive">
-        <input type="text" name="estado_civil" id="" placeholder="Estado Civil">
-        <input type="text" name="nomemae" id="" placeholder="Nome da mãe">
-        <input type="text" name="nomepai" id="" placeholder="Nome do pai">
-        <input type="text" name="cidade_nascimento" id="" placeholder="Natural de onde">
-      </div>
-      <hr>
-      <div class="d-flex gap-1 responsive">
-          <input type="number" name="cep" id="" placeholder="CEP">
-          <input type="text" name="cidade" id="" placeholder="Cidade">
-          <input type="text" name="bairro" id="" placeholder="Bairro">
-          <input type="text" name="rua" id="" placeholder="Nome da rua">
-      </div>
-      <hr>
-      <div class="d-flex gap-1 responsive">
-          <input type="number" name="numeracao" id="" placeholder="Número da residência">
-      </div>
-      <hr>
-      <div class="d-flex gap-1 responsive">
-          <input type="number" name="fone" id="" placeholder="CEP">
-          <input type="text" name="tpr" id="" placeholder="Cidade">
-          <input type="text" name="imovel_proprio" id="" placeholder="Bairro">
-          <input type="text" name="valor_imovel" id="" placeholder="Nome da rua">
-      </div>
-    </div>
-    <div class="d-flex flex-column mb-2">
-      <p class="text-secondary fs-4">DADOS PESSOAIS 2</p>
-      <div class="d-flex gap-1 responsive">
-        <input type="text" name="local_trabalho" id="" placeholder="Local de trabalho atual">
-        <input type="text" name="nome_empresa" id="" placeholder="Nome da empresa">
-        <input type="number" name="cep_empresa" id="" placeholder="CEP DA EMPRESA">
-      </div>
-      <hr>
-      <div class="d-flex gap-1 responsive">
-          <input type="text" name="cidade_empresa" id="" placeholder="Cidade onde se localiza">
-          <input type="text" name="bairro_empresa" id="" placeholder="Bairro">
-          <input type="text" name="rua_empresa" id="" placeholder="Rua">
-          <input type="number" name="numeracao_empresa" id="" placeholder="Número da mesma">
-      </div>
-      <hr>
-      <div class="d-flex gap-1 responsive">
-          <input type="number" name="tempo_servico" id="" placeholder="Tempo de serviço">
-          <input type="text" name="registrado" id="" placeholder="Registrado">
-          <input type="text" name="funcao" id="" placeholder="Função">
-          <input type="number" name="salario" id="" placeholder="Salario">
-      </div>
-    </div>
-    <div class="d-flex flex-column gap-1">
-      <p class="text-secondary fs-4">DADOS PESSOAIS 3</p>
-      <div class="d-flex gap-1 responsive">
-        <input type="text" name="futura_empresa" id="" placeholder="Nome da futura empresa">
-        <input type="number" name="cep_futura_empresa" id="" placeholder="CEP DA EMPRESA">
-        <input type="text" name="cidade_futura_empresa" id="" placeholder="Cidade onde se localiza">
-        <input type="text" name="bairro_futura_empresa" id="" placeholder="Bairro">
-      </div>
-      <div class="d-flex gap-1 responsive">
-        <input type="text" name="rua_futura_empresa" id="">
-        <input type="number" name="numeracao_futura_empresa" id="">
-        <input type="number" name="faturamento" id="">
-        <input type="number" name="fone_futura_empresa" id="">
-      </div>
-    </div>
-  </div> -->
-    
+  {% csrf_token %} <div class="form">{{form|crispy }}</div>
   <button type="submit" class="btn btn-primary btn-sm mt-5 mb-5">Cadastrar</button>
 </form>
 {% endblock%}

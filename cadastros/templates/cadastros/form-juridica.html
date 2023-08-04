@@ -1,4 +1,4 @@
-{%extends 'paginas/admin.html'%} {% load static %} {% block header %}
+{%extends 'paginas/admin.html'%} {% load static %} {% load crispy_forms_tags %} {% block header %}
 <header class="header-container">
   <nav class="nav-container">
     <a href="{% url 'cadastrar-pessoas-fisicas' %}" class="btn-left">Fisicas</a>
@@ -15,12 +15,8 @@
 {% block conteudo %}
 <form action="" method="POST">
     
-    {% csrf_token %}
-   
-      <input type="text" name="nome" id="">
-      <input type="number" name="cnpj" id="">
-      <input type="number" name="cpf" id="">
+    {% csrf_token %} <div class="form">{{form|crispy }}</div>
 
-  <button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
+  <button type="submit" class="btn btn-primary btn-sm mt-5 mb-5">Cadastrar</button>
 </form>
 {% endblock%}

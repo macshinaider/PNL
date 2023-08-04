@@ -27,8 +27,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'paginas.apps.PaginasConfig',
     'cadastros.apps.CadastrosConfig',
-    'crispy_forms',
+    'usuarios.apps.UsuariosConfig',
+     "crispy_forms",
+    "crispy_bootstrap5",
 ]
+
+# crispy forms 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -113,9 +120,14 @@ STATICFILES_DIRS = [
     Path.joinpath(BASE_DIR, 'static')
 ]
 
+
+#configuração de autenticação
+
+LOGIN_REDIRECT_URL = 'listas-pessoas-fisicas'
+LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'login'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
